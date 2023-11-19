@@ -9,6 +9,8 @@ def index(request):
 @csrf_exempt
 def hello(request):
     if request.method == 'POST':
+        url_imagen = f"https://pruebaaedm.blob.core.windows.net/prueba/logoED.png"
+        print(url_imagen+'Holaa')
         name = request.POST.get('name')
         
         if name is None or name == '':
@@ -16,7 +18,7 @@ def hello(request):
             return redirect('index')
         else:
             print("Request for hello page received with name=%s" % name)
-            context = {'name': name }
+            context = {'name': name, 'url_imagen': url_imagen}
             return render(request, 'hello_azure/hello.html', context)
     else:
         return redirect('index')
