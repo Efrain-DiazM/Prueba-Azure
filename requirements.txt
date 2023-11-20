@@ -1,2 +1,5 @@
 Django
 whitenoise
+azure-core==1.29.5
+azure-storage-blob==12.19.0
+django-storages==1.14.2
